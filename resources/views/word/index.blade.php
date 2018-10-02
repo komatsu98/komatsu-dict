@@ -2,8 +2,9 @@
 
 @section('content')
     <h3 class="pb-3 mb-4 font-italic border-bottom">
-        IP Address:
-        <span>
+
+        <span class="d-none">
+            IP Address:
             <?php
             $ip = trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
             echo ("Public IP: ".$ip);

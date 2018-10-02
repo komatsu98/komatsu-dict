@@ -37,6 +37,10 @@ class WordController extends Controller
             $words = $words->whereMonth('created_at', $month);
         }
 
+        if (request()->has('search')) {
+           $words = $words->where('word', 'LIKE', '%' . trim(request('search'), ' ') . '%');
+        }
+
         $words = $words->get();
 
 

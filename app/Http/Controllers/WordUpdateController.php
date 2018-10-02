@@ -110,8 +110,15 @@ class WordUpdateController extends Controller
      * @param  \App\Word $word
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Word $word)
+    public function destroy(WordUpdate $update)
     {
-        //
+        foreach($update->votes() as $vote)
+        {
+            $vote->delete();
+        }
+
+        $update->delete();
+
+        return back();
     }
 }

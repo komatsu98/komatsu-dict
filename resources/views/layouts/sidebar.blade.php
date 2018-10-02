@@ -35,8 +35,11 @@ switch ($db_driver) {
             <b>Up bài dịch</b>
             <ul>
                 <li>Hỗ trợ convert markdown -> html</li>
-                <li>Chia các đoạn markdown ra, chèn vào tương ứng các </li>
+                <li>Chia các đoạn markdown ra, chèn vào (mờ đi) tương ứng trên các textarea để dịch</li>
             </ul>
+        </li>
+        <li>
+            <b style="text-decoration: line-through">Search</b>
         </li>
         <li>
             <b>Real time Vote</b>

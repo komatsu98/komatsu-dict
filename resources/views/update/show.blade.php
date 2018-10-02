@@ -1,10 +1,25 @@
-@if($update->user == App\User::find(auth()->id()))
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <a href="/user/updates/{{ $update->id }}/edit">
+<div class="btn-group d-flex justify-content-start" role="group" aria-label="Basic example">
+    @if($update->user == App\User::find(auth()->id()))
+        <a href="/user/updates/{{ $update->id }}/edit" class="mr-2">
             <button type="button" class="btn btn-secondary rounded">Edit update</button>
         </a>
-    </div>
-@endif
+        <form method="POST" action="/user/updates/{{ $update->id }}">
+
+            @csrf
+            {{ method_field('DELETE') }}
+
+            <a href="/user/updates/{{ $update->id }}">
+                <button type="submit" class="btn btn-danger rounded">Delete update</button>
+            </a>
+        </form>
+
+    @endif
+    {{--<a href="/user/word/updates">--}}
+    {{--<button type="button" class="btn btn-secondary rounded">Edit update</button>--}}
+    {{--</a>--}}
+
+</div>
+
 <div class="float-right">
     <button class="btn btn-success" id="upvote_{{$update->id}}"
             onclick="upvote({{$update->id}})">{{ $update->countVotes()['upvote'] }}</button>

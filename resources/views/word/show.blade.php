@@ -4,7 +4,7 @@
 
     @include('word.word')
 
-    <hr>
+    {{--<hr>--}}
 
     {{--<div class="comments">--}}
         {{--@foreach($word->word_update() as $comment)--}}
@@ -12,7 +12,7 @@
         {{--@endforeach--}}
     {{--</div>--}}
 
-    <hr>
+    {{--<hr>--}}
     {{--add comment--}}
 
     {{--<form method="POST" action="/posts/{{ $post->id }}/comments">--}}

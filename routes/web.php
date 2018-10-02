@@ -21,6 +21,7 @@ Route::prefix('user')->group(function () {
     Route::post('/words', 'WordController@store');
 
     Route::get('/word/{word}/updates/create', 'WordUpdateController@create');
+//    Route::get('/updates/{update}/create', 'WordUpdateController@create');
     Route::post('/word/{word}/updates', 'WordUpdateController@store');
     Route::get('/updates/{update}/edit', 'WordUpdateController@edit');
     Route::put('/updates/{update}', 'WordUpdateController@update');
