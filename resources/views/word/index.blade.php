@@ -4,7 +4,7 @@
     <h3 class="pb-3 mb-4 font-italic border-bottom">
         IP Address:
         <span>
-            <?php echo request()->ip() ?>
+            <?php echo request()->getClientIp() ?>
         </span>
     </h3>
 
