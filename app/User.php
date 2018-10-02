@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Word;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -27,4 +28,24 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function words()
+    {
+        return $this->hasMany(Word::class);
+    }
+
+    public function word_updates()
+    {
+        return $this->hasMany(WordUpdate::class);
+    }
+
+    public function votes()
+    {
+        return $this->hasMany(Vote::class);
+    }
+
+    public function publish(Word $word)
+    {
+        $this->words()->save($word);
+    }
 }
