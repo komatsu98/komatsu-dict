@@ -42,6 +42,9 @@ switch ($db_driver) {
             <b style="text-decoration: line-through">Search</b>
         </li>
         <li>
+            <b>Pagination</b>
+        </li>
+        <li>
             <b>Real time Vote</b>
             <ul>
                 <li>socket?</li>

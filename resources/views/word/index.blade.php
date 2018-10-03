@@ -3,12 +3,15 @@
 @section('content')
     <h3 class="pb-3 mb-4 font-italic border-bottom">
 
-        <span class="d-none">
+        <span class="">
             IP Address:
             <?php
             $ip = trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
             echo ("Public IP: ".$ip);
             ?>
+            @php
+                echo csrf_token();
+            @endphp
         </span>
     </h3>
 

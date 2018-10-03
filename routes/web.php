@@ -16,6 +16,7 @@ Route::get('/words', 'WordController@index')->name('dict');
 Route::get('/words/{word}', 'WordController@show')->name('word_detail');
 //Route::get('/word/{word}/updates', 'WordUpdateController@index');
 
+
 Route::prefix('user')->group(function () {
     Route::get('/words/create', 'WordController@create');
     Route::post('/words', 'WordController@store');
@@ -28,6 +29,9 @@ Route::prefix('user')->group(function () {
     Route::delete('/updates/{update}', 'WordUpdateController@destroy');
 
     Route::post('/vote/{update}', 'VoteController@vote');
+
+    Route::get('/forms/create', 'WordFormController@create');
+    Route::post('/forms', 'WordFormController@store');
 });
 
 //Route::post('/words/{word}/comments', 'CommentsController@store');
