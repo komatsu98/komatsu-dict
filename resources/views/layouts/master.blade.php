@@ -9,7 +9,7 @@
     <meta name="author" content="">
     {{--<link rel="icon" href="../../../../favicon.ico">--}}
 
-    <title>Blog Template for Bootstrap</title>
+    <title>Komatsu Dictionary</title>
 
     <!-- Latest compiled and minified CSS -->
 {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">--}}

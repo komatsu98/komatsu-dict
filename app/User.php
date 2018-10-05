@@ -34,6 +34,11 @@ class User extends Authenticatable
         return $this->hasMany(Word::class);
     }
 
+    public function translations()
+    {
+        return $this->hasMany(Translation::class);
+    }
+
     public function word_updates()
     {
         return $this->hasMany(WordUpdate::class);

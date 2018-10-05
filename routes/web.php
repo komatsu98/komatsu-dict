@@ -16,6 +16,8 @@ Route::get('/words', 'WordController@index')->name('dict');
 Route::get('/words/{word}', 'WordController@show')->name('word_detail');
 //Route::get('/word/{word}/updates', 'WordUpdateController@index');
 
+Route::get('/translations', 'TranslationController@index')->name('trans');
+Route::get('/translations/{translation}', 'TranslationController@show')->name('trans_detail');
 
 Route::prefix('user')->group(function () {
     Route::get('/words/create', 'WordController@create');
@@ -32,6 +34,9 @@ Route::prefix('user')->group(function () {
 
     Route::get('/forms/create', 'WordFormController@create');
     Route::post('/forms', 'WordFormController@store');
+
+    Route::get('/translations/create', 'TranslationController@create');
+    Route::post('/translations', 'TranslationController@store');
 });
 
 //Route::post('/words/{word}/comments', 'CommentsController@store');
