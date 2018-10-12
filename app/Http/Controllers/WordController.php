@@ -33,10 +33,13 @@ class WordController extends Controller
 
         if (request()->has('month') && request()->has('year')) {
 //            $words->filter(request(['month', 'year']));
+            echo $words;
             $year = date('Y', strtotime(request('year')));
             $words = $words->whereYear('created_at', $year);
+            echo $words;
             $month = date('m', strtotime(request('month')));
             $words = $words->whereMonth('created_at', $month);
+            echo $words;
         }
 
         if (request()->has('search')) {
