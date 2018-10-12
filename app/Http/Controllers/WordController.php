@@ -39,7 +39,7 @@ class WordController extends Controller
             echo $words;
             $month = date('m', strtotime(request('month')));
             $words = $words->whereMonth('created_at', $month);
-            echo $words;
+            dd($words);
         }
 
         if (request()->has('search')) {
