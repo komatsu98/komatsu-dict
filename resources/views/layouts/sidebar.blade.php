@@ -1,4 +1,4 @@
-<?php
+@php
 
 use App\Word;
 use Illuminate\Support\Facades\DB;
@@ -14,17 +14,19 @@ switch ($db_driver) {
         break;
     case 'pgsql':
         //
+        echo 1;
         $archives = Word::selectRaw('extract(year FROM created_at) as year, extract(month FROM created_at) as month')
             ->groupBy('year', 'month')
             ->orderByRaw('min(created_at)')
             ->get()
             ->toArray();
+        dd($archives);
         break;
     default:
         throw new Exception('Driver not supported.');
         break;
 }
-?>
+@endphp
 
 
 <div class="p-3 mb-3 bg-light rounded">

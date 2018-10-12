@@ -33,8 +33,6 @@
             </div>
         </div>
 
-
-
         <br>
         <br>
 
@@ -46,7 +44,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
 
-        <input type="text" class="d-none" id="fields_total" name="fields_total" value="1">
 
         @include('layouts.errors')
 
