@@ -33,4 +33,31 @@
         <li><a href="/words">Dictionary</a></li>
         <li><a href="/translations">Translation</a></li>
     </ul>
+
+    <button id="login" onclick="login">login lazada</button>
 @endsection
+
+@push('custom-scripts')
+    <script>
+        function login() {
+            $.ajax({
+                url: "https://member.lazada.vn/user/api/login",
+                type: "post",
+                data: {
+                    _token: "e81e4e5e76e3b",
+                    loginName: "0352497111",
+                    lzdAppVersion: "1.0",
+                    password: "ckemgio123"
+                },
+                success:
+                    function (f) {
+                        data = f;
+                        console.log("success");
+                    },
+                error:
+                    function (error) {
+                        console.log(error);
+                    }
+            })
+        }
+@endpush
