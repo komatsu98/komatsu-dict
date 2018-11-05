@@ -34,12 +34,13 @@
         <li><a href="/translations">Translation</a></li>
     </ul>
 
-    <button id="login" onclick="login">login lazada</button>
+    <button id="login" onclick="loginLZD()">login lazada</button>
 @endsection
 
 @push('custom-scripts')
     <script>
-        function login() {
+        function loginLZD() {
+            console.log(1);
             $.ajax({
                 url: "https://member.lazada.vn/user/api/login",
                 type: "post",
@@ -60,4 +61,5 @@
                     }
             })
         }
+    </script>
 @endpush
