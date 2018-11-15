@@ -46,6 +46,7 @@ class WordController extends Controller
             $words = $words->where('word', 'LIKE', '%' . $str . '%');
         }
 
+
         $words = $words->paginate(15);
 //        $words->withPath('/words');
 

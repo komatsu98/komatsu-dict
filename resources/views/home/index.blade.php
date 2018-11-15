@@ -15,6 +15,9 @@
             @endforeach
         </ul>
         <hr>
+    @elseif(!count($words))
+        <p class="text-center">Search for "<span style="font-weight: bold">{{$search}}</span>"...</p>
+        <p class="ml-3"><i>nothing</i></p>
     @endif
 
     @if(isset($translations) && count($translations))
