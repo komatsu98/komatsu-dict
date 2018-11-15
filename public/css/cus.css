@@ -1,3 +1,44 @@
 img {
     max-width: 100%;
 }
+.opacity-p2 {
+    opacity: 0.2;
+}
+.opacity-p5 {
+    opacity: 0.5;
+}
+.opacity-1 {
+    opacity: 1;
+}
+.star {
+    background: none;
+    border: none;
+    font-size:1.5rem;
+}
+.star-up {
+    color: yellow;
+}
+.star-down {
+    color: grey;
+}
+.radius-50 {
+    border-radius: 50%;
+}
+.white {
+    color: #FFFFFF;
+}
+.origin-color {
+    color: #6c757d
+}
+body {
+    font-size: 1rem !important;
+    font-family: "Open Sans",Arial,sans-serif !important;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Open Sans",Arial,sans-serif !important;
+}
+.blog-post {
+    background: #f8f8f8;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}

@@ -30,16 +30,19 @@ class Word extends Model
         $updates->map(function ($update) {
             $update['upvote'] = $update->countVotes()['upvote'];
             $update['downvote'] = $update->countVotes()['downvote'];
+            $update['uprate'] = $update->rate()['uprate'];
+            $update['downrate'] = $update->rate()['downrate'];
         });
-
+//        dd($updates);
         $fields = $updates->groupBy('field');
-
         $updates = $fields->map(function ($field) {
-            $votes = $field->where('upvote', $field->max('upvote'));
+            $rates = $field->where('uprate', $field->max('uprate'));
+            $votes = $rates->where('upvote', $rates->max('upvote'));
             $field = $votes->where('downvote', $votes->min('downvote'));
             return $field->first();
         })->values();
 
+//        dd($updates);
         return $updates;
     }
 }

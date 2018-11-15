@@ -1,15 +1,19 @@
 <div id="fields">
     <div class="form-group row">
-        <div class="col-6">
+        <div class="col-12">
             <label for="field">Field</label>
             <input type="text" class="form-control" name="field_1" placeholder=""
-                   value="{{$update ? $update->field : ''}}" >
-
+                   value="{{$update ? $update->field : ''}}">
         </div>
-        <div class="col-6">
-            <label for="meaning">Meaning</label>
-            <input type="text" class="form-control" name="meaning_1" value="{{$update ? $update->meaning : ''}}"
-                   >
+        <div class="col-12">
+            <label for="meaning">English explanation (*)</label>
+            <input type="text" class="form-control" name="vi_meaning_1" value="{{$update ? $update->en_meaning : ''}}"
+                   required>
+        </div>
+        <div class="col-12">
+            <label for="meaning">Vietnamese meaning (*)</label>
+            <input type="text" class="form-control" name="en_meaning_1" value="{{$update ? $update->vi_meaning : ''}}"
+                   required>
         </div>
         <div class="col-12">
             <label for="example">Example</label>
@@ -17,12 +21,12 @@
                       value="{{$update ? $update->example : ''}}"></textarea>
         </div>
         <div class="col-12">
-            <label for="example_meaning">Example Meaning</label>
+            <label for="example_meaning">Example meaning</label>
             <textarea type="text" class="form-control" name="example_meaning_1"
                       value="{{$update ? $update->example_meaning : ''}}"></textarea>
         </div>
         <div class="col-12">
-            <label for="note">Note</label>
+            <label for="note">Ghi chú</label>
             <input type="text" class="form-control" name="note_1" placeholder=""
                    value="{{$update ? $update->note : ''}}">
         </div>
@@ -60,28 +64,41 @@
             }).appendTo($(div1));
 
 
-            $('<label>Field<label/>').attr({
+            $('<label>Field ' + i + '<label/>').attr({
                 for: 'field',
-            }).appendTo(div1_1);
+            }).appendTo(div1_3);
 
             $('<input/>').attr({
                 type: 'text',
                 class: 'form-control',
                 name: 'field_' + i,
                 placeholder: ''
-            }).appendTo(div1_1);
+            }).appendTo(div1_3);
 
 
-            $('<label>Meaning</label>').attr({
-                for: 'meaning',
-            }).appendTo(div1_2);
+            $('<label>English explanation (*)</label>').attr({
+                for: 'en_meaning',
+            }).appendTo(div1_3);
 
             $('<input/>').attr({
                 type: 'text',
                 class: 'form-control',
-                name: 'meaning_' + i,
-                placeholder: ''
-            }).appendTo(div1_2);
+                name: 'en_meaning_' + i,
+                placeholder: '',
+                required: true
+            }).appendTo(div1_3);
+
+            $('<label>Vietnamese Meaning (*)</label>').attr({
+                for: 'vi_meaning',
+            }).appendTo(div1_3);
+
+            $('<input/>').attr({
+                type: 'text',
+                class: 'form-control',
+                name: 'vi_meaning_' + i,
+                placeholder: '',
+                required: true
+            }).appendTo(div1_3);
 
 
             $('<label>Example</label>').attr({

@@ -2,22 +2,19 @@
 
 @section('content')
 
-    <h1>Create an Update</h1>
-    <hr>
+    <h1>Create Translation</h1>
     <form method="POST" action="/user/word/{{ $word->id }}/updates">
 
         @csrf
+        <h3 class="d-flex justify-content-between pr-2 pl-2" style="background: #4577bf; border-top-right-radius: 0.5rem; border-top-left-radius: 0.5rem">
+            <div class="mt-auto mb-auto pl-2 white">
+                <i class="far fa-copy"></i>
 
-        <div class="blogs-post">
-            <h2 class="blog-post-title">
-                {{ $word->word }} <span><i>({{ $word->form->name }})</i></span>
-            </h2>
-        </div>
+                <span style="font-size: 1.5rem"><b>{{ $word->word }}</b></span> <span><i
+                            style="font-size: 0.9rem">({{ $word->form->name }})</i></span>
 
-        <div class="form-group">
-            <span>Word form: </span>
-            <span>{{ $word->form->name }}</span>
-        </div>
+            </div>
+        </h3>
 
         @include('update.form')
 

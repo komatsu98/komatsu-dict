@@ -39,6 +39,13 @@ Route::prefix('user')->group(function () {
     Route::post('/translations', 'TranslationController@store');
 });
 
+Route::prefix('admin')->group(function () {
+//    Route::get('/', 'HomeController@adminIndex');
+    Route::get('words', 'WordController@adminWordsIndex');
+    Route::get('words/{word}', 'WordController@adminWordShow')->name('admin_word_detail');
+    Route::get('users', 'WordController@adminUsersIndex');
+    Route::get('users/{user}', 'WordController@adminUserShow')->name('admin_user_detail');;
+});
 //Route::post('/words/{word}/comments', 'CommentsController@store');
 
 Route::get('/register', 'RegistrationController@create');

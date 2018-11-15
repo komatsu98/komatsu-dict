@@ -19,7 +19,8 @@ class CreateTableWordUpdates extends Migration
             $table->integer('user_id');
             //by related, by situation
             $table->string('field')->nullable();
-            $table->string('meaning');
+            $table->string('vi_meaning');
+            $table->string('en_meaning');
             $table->string('example')->nullable();
             $table->string('example_meaning')->nullable();
             $table->string('note')->nullable();

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Tag;
+use App\User;
+use App\Vote;
 use App\Word;
 use App\WordForm;
 use App\WordUpdate;
@@ -40,11 +42,11 @@ class WordController extends Controller
         }
 
         if (request()->has('search')) {
-           $words = $words->where('word', 'LIKE', '%' . trim(request('search'), ' ') . '%');
+            $words = $words->where('word', 'LIKE', '%' . trim(request('search'), ' ') . '%');
         }
 
-        $words = $words->get();
-
+        $words = $words->paginate(15);
+//        $words->withPath('/words');
 
         return view('word.index', compact('words'));
     }
@@ -97,7 +99,7 @@ class WordController extends Controller
         $tag_ids = $word->tags()->pluck('tag_id')->all();
 
         for ($i = 0; $i < sizeof($tags); $i++) {
-            if($tags[$i] == '') continue;
+            if ($tags[$i] == '') continue;
             $check = Tag::where('name', $tags[$i])->first();
             if (!$check) {
                 $check = Tag::create([
@@ -110,13 +112,14 @@ class WordController extends Controller
 
         // create update
 
-        if ($request->meaning_1) {
+        if ($request->vi_meaning_1 && $request->en_meaning_1) {
             for ($i = 1; $i <= $request->fields_total; $i++) {
                 WordUpdate::create([
                     'word_id' => $word->id,
                     'user_id' => auth()->id(),
                     'field' => request('field_' . $i),
-                    'meaning' => request('meaning_' . $i),
+                    'vi_meaning' => request('vi_meaning_' . $i),
+                    'en_meaning' => request('en_meaning_' . $i),
                     'example' => request('example_' . $i),
                     'example_meaning' => request('example_meaning_' . $i),
                     'note' => request('note_' . $i)
@@ -131,5 +134,33 @@ class WordController extends Controller
     public function show(Word $word)
     {
         return view('word.show', compact('word'));
+    }
+
+    public function adminWordsIndex()
+    {
+        $words = Word::orderBy('word')->paginate(15);
+        return view('admin.words', compact('words'));
+    }
+
+    public function adminWordShow(Word $word)
+    {
+        return view('admin.word_show', compact('word'));
+    }
+
+    public function adminUsersIndex()
+    {
+        $users = User::orderBy('created_at')->paginate(30);
+        return view('admin.users', compact('users'));
+    }
+
+    public function adminUserShow(User $user)
+    {
+        $updates = $user->word_updates;
+        $data = [
+            'user' => $user,
+            'updates' => $updates
+        ];
+        return view('admin.user_show', $data);
+
     }
 }

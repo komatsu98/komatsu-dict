@@ -27,32 +27,32 @@ switch ($db_driver) {
 @endphp
 
 
-<div class="p-3 mb-3 bg-light rounded">
-    <h4 class="font-italic">Todos</h4>
+{{--<div class="p-3 mb-3 bg-light rounded">--}}
+    {{--<h4 class="font-italic">Todos</h4>--}}
 
-    <ul>
-        <li>
-            <b>Up bài dịch</b>
-            <ul>
-                <li>Hỗ trợ convert markdown -> html</li>
-                <li>Chia các đoạn markdown ra, chèn vào (mờ đi) tương ứng trên các textarea để dịch</li>
-            </ul>
-        </li>
-        <li>
-            <b style="text-decoration: line-through">Search</b>
-        </li>
-        <li>
-            <b>Pagination</b>
-        </li>
-        <li>
-            <b>Real time Vote</b>
-            <ul>
-                <li>socket?</li>
-            </ul>
-        </li>
-    </ul>
+    {{--<ul>--}}
+        {{--<li>--}}
+            {{--<b>Up bài dịch</b>--}}
+            {{--<ul>--}}
+                {{--<li>Hỗ trợ convert markdown -> html</li>--}}
+                {{--<li>Chia các đoạn markdown ra, chèn vào (mờ đi) tương ứng trên các textarea để dịch</li>--}}
+            {{--</ul>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<b style="text-decoration: line-through">Search</b>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<b>Pagination</b>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<b>Real time Vote</b>--}}
+            {{--<ul>--}}
+                {{--<li>socket?</li>--}}
+            {{--</ul>--}}
+        {{--</li>--}}
+    {{--</ul>--}}
 
-</div>
+{{--</div>--}}
 
 <div class="p-3">
     <h4 class="font-italic">Archives</h4>

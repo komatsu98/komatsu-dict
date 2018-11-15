@@ -9,11 +9,11 @@
         @csrf
 
         <div class="form-group">
-            <label for="word">Word</label>
+            <label for="word">Word (*)</label>
             <input type="text" class="form-control" name="word" placeholder="" required>
         </div>
         <div class="form-group">
-            <label for="form">Word Form</label>
+            <label for="form">Word Form (*)</label>
             <select class="form-control" name="form_id" placeholder="" required>
                 @foreach($forms as $form)
                     <option value={{ $form->id }}> {{ $form->name }} </option>
