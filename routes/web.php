@@ -37,6 +37,8 @@ Route::prefix('user')->group(function () {
 
     Route::get('/translations/create', 'TranslationController@create');
     Route::post('/translations', 'TranslationController@store');
+
+    Route::get('/{user}', 'WordController@adminUserShow')->name('admin_user_detail');
 });
 
 Route::prefix('admin')->group(function () {
@@ -44,7 +46,7 @@ Route::prefix('admin')->group(function () {
     Route::get('words', 'WordController@adminWordsIndex');
     Route::get('words/{word}', 'WordController@adminWordShow')->name('admin_word_detail');
     Route::get('users', 'WordController@adminUsersIndex');
-    Route::get('users/{user}', 'WordController@adminUserShow')->name('admin_user_detail');;
+    Route::get('users/{user}', 'WordController@adminUserShow')->name('admin_user_detail');
 });
 //Route::post('/words/{word}/comments', 'CommentsController@store');
 

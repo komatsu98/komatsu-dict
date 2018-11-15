@@ -20,7 +20,7 @@
             {{--</svg>--}}
             {{--</a>--}}
             @if(Auth::check())
-                <a class="btn btn-sm btn-outline-secondary mr-2" href="#">{{ Auth::user()->name }}</a>
+                <a class="btn btn-sm btn-outline-secondary mr-2" href="/user/{{auth()->id()}}">{{ Auth::user()->name }}</a>
                 <a class="btn btn-sm btn-outline-secondary" href="/logout">Sign out</a>
             @else
                 <a class="btn btn-sm btn-outline-secondary mr-2" href="/login">Sign in</a>
