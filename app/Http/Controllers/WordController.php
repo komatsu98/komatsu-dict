@@ -42,8 +42,8 @@ class WordController extends Controller
         }
 
         if (request()->has('search')) {
-            $str = strtolower(request('search'));
-            $words = $words->where('word', 'LIKE', '%' . trim($str, ' ') . '%');
+            $str = trim(strtolower(request('search')), ' ');
+            $words = $words->where('word', 'LIKE', '%' . $str . '%');
         }
 
         $words = $words->paginate(15);
