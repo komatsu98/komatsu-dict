@@ -26,7 +26,7 @@
                       value="{{$update ? $update->example_meaning : ''}}"></textarea>
         </div>
         <div class="col-12">
-            <label for="note">Ghi chú</label>
+            <label for="note">Note</label>
             <input type="text" class="form-control" name="note_1" placeholder=""
                    value="{{$update ? $update->note : ''}}">
         </div>
