@@ -13,6 +13,11 @@
         </div>
 
         <div class="form-group">
+            <label for="student_id">Student Id:</label>
+            <input type="text" class="form-control" id="student_id" name="student_id" required>
+        </div>
+
+        <div class="form-group">
             <label for="email">Email:</label>
             <input type="text" class="form-control" id="email" name="email" required>
         </div>
