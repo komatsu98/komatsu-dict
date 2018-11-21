@@ -7,12 +7,12 @@
         </div>
         <div class="col-12">
             <label for="meaning">English explanation (*)</label>
-            <input type="text" class="form-control" name="vi_meaning_1" value="{{$update ? $update->vi_meaning : ''}}"
+            <input type="text" class="form-control" name="en_meaning_1" value="{{$update ? $update->en_meaning : ''}}"
                    required>
         </div>
         <div class="col-12">
             <label for="meaning">Vietnamese meaning (*)</label>
-            <input type="text" class="form-control" name="en_meaning_1" value="{{$update ? $update->en_meaning : ''}}"
+            <input type="text" class="form-control" name="vi_meaning_1" value="{{$update ? $update->vi_meaning : ''}}"
                    required>
         </div>
         <div class="col-12">
