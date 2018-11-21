@@ -14,7 +14,7 @@ class AddColumnStudentIdUsers extends Migration
     public function up()
     {
         Schema::table('users', function($table) {
-            $table->string('student_id');
+            $table->string('student_id')->nullable();
         });
     }
 
