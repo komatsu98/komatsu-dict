@@ -20,6 +20,10 @@ ExpiresDefault "access 2 day"
 </IfModule>
 ## EXPIRES CACHING ##
 
+##
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
 ##header
 <IfModule mod_headers.c>
 Header set Connection keep-alive

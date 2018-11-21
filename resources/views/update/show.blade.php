@@ -53,7 +53,7 @@
     <span>{{ $update->en_meaning }}</span>
 </p>
 <p>
-    <span class="font-weight-bold mt-2">Nghĩa tiếng Việt</span>
+    <span class="font-weight-bold mt-2">Nghĩa tiếng Việt:</span>
     <span>{{ $update->vi_meaning }}</span>
 </p>
 
