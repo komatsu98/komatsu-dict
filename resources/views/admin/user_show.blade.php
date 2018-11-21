@@ -5,10 +5,16 @@
         <span>Posted by </span>
         <a class="pr-4 border-right" href="/admin/users/{{$user->id}}">{{$user->name}}</a>
         <span class="pr-2 pl-2 border-right">{{count($user->word_updates)}} <i class="far fa-copy"></i></span>
-        <span class="pr-2 pl-2 border-right">{{$user->count_rates()['uprate']}} <i class="fas fa-star star-up"></i> </span>
+        <span class="pr-2 pl-2 border-right">{{$user->count_rates()['uprate']}} <i
+                    class="fas fa-star star-up"></i> </span>
         <span> {{$user->count_rates()['uprate']}} <i class="fas fa-long-arrow-alt-up"></i></span>
     </div>
 
+    @if($user->id === auth()->id())
+        <button class="btn btn-info mb-2">
+            <a href="/user/profile/{{auth()->id()}}/edit" class="white">Edit profile</a>
+        </button>
+    @endif
 
     @foreach($updates as $update)
         <div class="blog-post">

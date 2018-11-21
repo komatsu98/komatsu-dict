@@ -39,6 +39,8 @@ Route::prefix('user')->group(function () {
     Route::post('/translations', 'TranslationController@store');
 
     Route::get('/{user}', 'WordController@adminUserShow')->name('admin_user_detail');
+    Route::get('profile/{user}/edit', 'UserController@edit');
+    Route::put('profile/{user}', 'UserController@update');
 });
 
 Route::prefix('admin')->group(function () {
