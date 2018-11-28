@@ -81,7 +81,7 @@ class WordController extends Controller
             'form_id' => 'required',
         ]);
 
-        $w = Word::where([['word', $request->word], ['form_id', $request->form_id]])->first();
+        $w = Word::where([['word', strtolower($request->word)], ['form_id', $request->form_id]])->first();
 
         if ($w) {
             return back()->withErrors([
@@ -90,7 +90,7 @@ class WordController extends Controller
         }
 
         $word = Word::create([
-            'word' => request('word'),
+            'word' => strtolower(request('word')),
             'form_id' => request('form_id'),
             'user_id' => auth()->id()
         ]);
@@ -102,10 +102,10 @@ class WordController extends Controller
 
         for ($i = 0; $i < sizeof($tags); $i++) {
             if ($tags[$i] == '') continue;
-            $check = Tag::where('name', $tags[$i])->first();
+            $check = Tag::where('name', strtolower($tags[$i]))->first();
             if (!$check) {
                 $check = Tag::create([
-                    'name' => $tags[$i]
+                    'name' => strtolower($tags[$i])
                 ]);
             }
             array_push($tag_ids, $check->id);
