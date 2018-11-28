@@ -24,7 +24,7 @@ class RegistrationController extends Controller
         $user = User::create([
             'student_id' => request('student_id'),
             'name' => request('name'),
-            'email' => request('email'),
+            'email' => strtolower(request('email')),
             'password' => bcrypt(request('password'))
         ]);
 
