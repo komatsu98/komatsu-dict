@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    @if(isset($seach))
+    @if(isset($search))
         <h2>{{ $search }} . . .</h2>
     @endif
 
