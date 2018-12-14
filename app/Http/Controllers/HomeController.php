@@ -10,6 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $search = null;
         if (request()->has('search')) {
             $search = trim(strtolower(request('search')), ' ');
             $words = Word::where('word', 'LIKE', '%' . $search . '%')->get();
