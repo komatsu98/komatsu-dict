@@ -68,9 +68,9 @@ class WordUpdateController extends Controller
     public function update(WordUpdate $update)
     {
         $this->validate(request(), [
-
-            'field_1' => 'required',
-            'meaning_1' => 'required'
+//            'field_1' => 'required',
+            'vi_meaning_1' => 'required',
+            'en_meaning_1' => 'required'
 
         ]);
         if ($update->user != User::find(auth()->id())) {
@@ -81,7 +81,8 @@ class WordUpdateController extends Controller
 
         $update->update([
             'field' => request('field_1'),
-            'meaning' => request('meaning_1'),
+            'vi_meaning' => request('vi_meaning_1'),
+            'en_meaning' => request('en_meaning_1'),
             'example' => request('example_1'),
             'example_meaning' => request('example_meaning_1'),
             'note' => request('note_1'),

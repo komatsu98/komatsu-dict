@@ -19,10 +19,10 @@ class SessionsController extends Controller
     public function store()
     {
         //auth user
-        $requestToLowerCase = ['email' => strtolower(request('email')), 'password' => request('password')];
-        if(!auth()->attempt($requestToLowerCase)) {
+//        $requestToLowerCase = ['email' => strtolower(request('email')), 'password' => request('password')];
+        if(!auth()->attempt(request(['email', 'password']))) {
             return back()->withErrors([
-                'message' => "Please check your credentials and try again."
+                'message' => "lease check your credentials and try again."
             ]);
         };
 

@@ -1,5 +1,6 @@
 <div class="blog-post">
-    <h3 class="d-flex justify-content-between pr-2 pl-2" style="background: #4577bf; border-top-right-radius: 0.5rem; border-top-left-radius: 0.5rem">
+    <h3 class="d-flex justify-content-between pr-2 pl-2"
+        style="background: #4577bf; border-top-right-radius: 0.5rem; border-top-left-radius: 0.5rem">
         <div class="mt-auto mb-auto pl-2 white">
             <i class="far fa-copy"></i>
             <a href="/words/{{ $word->id }}" class="white">
@@ -18,7 +19,6 @@
     </h3>
 
 
-
     @foreach($word->getShownUpdates() as $update)
         @include('update.show')
         @if(request()->route()->getName() === "word_detail")
@@ -29,11 +29,11 @@
 
     <div class="">
         @foreach($word->tags as $tag)
-            <span>
+            <span class="mt-1">
              <a href="/words?tag={{ $tag->id }}">
               <button class="btn btn-info">{{ $tag->name }}</button>
              </a>
-         </span>
+            </span>
         @endforeach
     </div>
 </div>

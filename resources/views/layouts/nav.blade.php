@@ -20,7 +20,16 @@
             {{--</svg>--}}
             {{--</a>--}}
             @if(Auth::check())
-                <a class="btn btn-sm btn-outline-secondary mr-2" href="/user/{{auth()->id()}}">{{ Auth::user()->student_id ? Auth::user()->student_id : Auth::user()->name }}</a>
+
+                <div class="dropdown">
+                    <a class="btn btn-sm btn-outline-secondary mr-2 dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->student_id ? Auth::user()->student_id : Auth::user()->name }}</a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/user/{{auth()->id()}}">Posts</a>
+                        <a class="dropdown-item" href="/user/profile/{{auth()->id()}}/edit">Edit Profile</a>
+                    </div>
+                </div>
+
                 <a class="btn btn-sm btn-outline-secondary" href="/logout">Sign out</a>
             @else
                 <a class="btn btn-sm btn-outline-secondary mr-2" href="/login">Sign in</a>

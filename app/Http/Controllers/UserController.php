@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    protected $redirectTo = '/';
-
-    public function __construct()
-    {
-//        $this->middleware('guest', ['except' => '']);
-    }
+//    protected $redirectTo = '/';
+//
+//    public function __construct()
+//    {
+////        $this->middleware('guest', ['except' => '']);
+//    }
 
     public function edit(User $user)
     {
