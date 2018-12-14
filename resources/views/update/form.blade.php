@@ -18,7 +18,7 @@
         <div class="col-12">
             <label for="example">Example</label>
             <textarea type="text" class="form-control" name="example_1"
-                      value="{{$update ? $update->example : ''}}"></textarea>
+                      value="{{$update ? $update->vi_meaning : ''}}"></textarea>
         </div>
         <div class="col-12">
             <label for="example_meaning">Example meaning</label>
