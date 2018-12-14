@@ -17,13 +17,13 @@
         </div>
         <div class="col-12">
             <label for="example">Example</label>
-            <textarea type="text" class="form-control" name="example_1"
-                      value="{{$update ? $update->vi_meaning : ''}}"></textarea>
+            <input type="text" class="form-control" name="example_1"
+                      value="{{$update ? $update->example : ''}}">
         </div>
         <div class="col-12">
             <label for="example_meaning">Example meaning</label>
-            <textarea type="text" class="form-control" name="example_meaning_1"
-                      value="{{$update ? $update->example_meaning : ''}}"></textarea>
+            <input type="text" class="form-control" name="example_meaning_1"
+                      value="{{$update ? $update->example_meaning : ''}}">
         </div>
         <div class="col-12">
             <label for="note">Note</label>
