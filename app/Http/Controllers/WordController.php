@@ -157,9 +157,9 @@ class WordController extends Controller
         if ($search) {
             $search = trim(strtolower(request('search')), ' ');
             $users = User::where('name', 'LIKE', '%' . $search . '%')
-                ->orWhere('student_id', 'LIKE', '%' . $search . '%')->get();
+                ->orWhere('student_id', 'LIKE', '%' . $search . '%');
         }
-        $users->paginate(30);
+        $users = $users->paginate(30);
         return view('admin.users', compact('users'));
     }
 
