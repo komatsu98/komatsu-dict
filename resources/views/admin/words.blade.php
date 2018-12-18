@@ -6,9 +6,9 @@
     </h2>
     @if(count($words))
         {{--<ol start="{{((int)(request('page')-1)) * 15 + 1}}">--}}
-        <ol start="{{($words->currentPage()-1) * 15 + 1}}">
+        <ol start="{{($words->currentPage()-1) * 15 + 1}}" class="list">
             @foreach($words as $word)
-                <li>
+                <li class="pd-2">
                     <a href="/admin/words/{{ $word->id }}">
                         {{ $word->word }} <span><i>({{ $word->form->name }})</i></span>
                     </a>

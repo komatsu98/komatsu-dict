@@ -4,9 +4,9 @@
     <h2 class=" ml-3">
         Danh sách thành viên
     </h2>
-    <ol>
+    <ol class="list">
         @foreach($users as $user)
-            <li>
+            <li class="pd-2">
                 <a class="pr-md-4 pr-2 " href="/admin/users/{{$user->id}}">
                     {{$user->name}}<span> - {{$user->student_id}}</span>
                 </a>
