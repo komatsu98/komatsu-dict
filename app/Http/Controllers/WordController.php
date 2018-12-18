@@ -165,7 +165,7 @@ class WordController extends Controller
 
     public function adminUserShow(User $user)
     {
-        $updates = $user->word_updates;
+        $updates = $user->word_updates->orderBy('created_at','desc')->get();
         $data = [
             'user' => $user,
             'updates' => $updates
