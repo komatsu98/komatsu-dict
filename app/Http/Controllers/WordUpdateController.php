@@ -107,7 +107,7 @@ class WordUpdateController extends Controller
         }
         $word = $update->word;
         $update->delete();
-        if(count($word()->updates) < 1) {
+        if(count($word->updates) < 1) {
             $word->delete();
         }
 
