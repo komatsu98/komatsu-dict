@@ -28,18 +28,18 @@
     {{--****************** for translations *****************--}}
 
     {{--@if(isset($translations) && count($translations))--}}
-        {{--<p>Kết quả tìm kiếm cho bài dịch...</p>--}}
-        {{--<ul>--}}
-            {{--@foreach($translations as $translation)--}}
-                {{--<a href="/translations/{{ $translation->id }}">--}}
-                    {{--<li>{{ $translation->title }}</li>--}}
-                {{--</a>--}}
-            {{--@endforeach--}}
-        {{--</ul>--}}
-        {{--<hr>--}}
+    {{--<p>Kết quả tìm kiếm cho bài dịch...</p>--}}
+    {{--<ul>--}}
+    {{--@foreach($translations as $translation)--}}
+    {{--<a href="/translations/{{ $translation->id }}">--}}
+    {{--<li>{{ $translation->title }}</li>--}}
+    {{--</a>--}}
+    {{--@endforeach--}}
+    {{--</ul>--}}
+    {{--<hr>--}}
     {{--@elseif(isset($translations) && !count($translations))--}}
-        {{--<p class="text-center">Search for "<span style="font-weight: bold">{{$search}}</span>"...</p>--}}
-        {{--<p class="ml-3"><i>nothing</i></p>--}}
+    {{--<p class="text-center">Search for "<span style="font-weight: bold">{{$search}}</span>"...</p>--}}
+    {{--<p class="ml-3"><i>nothing</i></p>--}}
     {{--@endif--}}
 
     <p class="text-center font-weight-light" style="font-size: 4rem">
