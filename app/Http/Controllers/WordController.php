@@ -156,10 +156,10 @@ class WordController extends Controller
         $search = request('user_search');
         if ($search) {
             $search = trim(strtolower(request('search')), ' ');
-            $users = User::where('name', 'LIKE', '%' . $search . '%')
+            $users = $users->where('name', 'LIKE', '%' . $search . '%')
                 ->orWhere('student_id', 'LIKE', '%' . $search . '%');
         }
-        $users = $users->paginate(30);
+        $users = $users->paginate(40);
         return view('admin.users', compact('users'));
     }
 
