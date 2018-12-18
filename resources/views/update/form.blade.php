@@ -47,22 +47,29 @@
             i++;
             $('<br>').appendTo('#fields');
 
+            var div0 = $('<button></button>').attr({
+                class: 'btn btn-danger',
+            }).appendTo($('#fields'));
+
             var div1 = $('<div></div>').attr({
                 class: 'form-group row',
             }).appendTo($('#fields'));
 
-            var div1_1 = $('<div></div>').attr({
-                class: 'col-6',
-            }).appendTo($(div1));
-
-            var div1_2 = $('<div></div>').attr({
-                class: 'col-6',
-            }).appendTo($(div1));
+            // var div1_1 = $('<div></div>').attr({
+            //     class: 'col-6',
+            // }).appendTo($(div1));
+            //
+            // var div1_2 = $('<div></div>').attr({
+            //     class: 'col-6',
+            // }).appendTo($(div1));
 
             var div1_3 = $('<div></div>').attr({
                 class: 'col-12',
             }).appendTo($(div1));
 
+            $('<label>Delete Field ' + i + '<label/>').attr({
+                for: 'field',
+            }).appendTo(div0);
 
             $('<label>Field ' + i + '<label/>').attr({
                 for: 'field',
@@ -136,8 +143,16 @@
 
             $('#fields_total').attr({
                 value: i
+            });
+            div0.on("click", function() {
+                while (div1.firstChild) {
+                    div1.removeChild(div1.firstChild);
+                };
+                $('fields').removeChild(div1);
+                $('fields').removeChild(div0);
             })
         });
+
 
 
     </script>
