@@ -20,7 +20,9 @@ class RegistrationController extends Controller
             'email' => 'required|email',
             'password' => 'required|confirmed'
         ]);
-
+        if(User::where('email', request('email'))) {
+            return "Gmail has already been taken";
+        }
         $user = User::create([
             'student_id' => request('student_id'),
             'name' => request('name'),

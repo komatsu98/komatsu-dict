@@ -116,7 +116,7 @@ class WordController extends Controller
 
         if ($request->vi_meaning_1 && $request->en_meaning_1) {
             for ($i = 1; $i <= $request->fields_total; $i++) {
-                if(request('vi_meaning' . $i) && request('en_meaning' . $i)) {
+                if(request('vi_meaning_' . $i) && request('en_meaning_' . $i)) {
                     WordUpdate::create([
                         'word_id' => $word->id,
                         'user_id' => auth()->id(),
