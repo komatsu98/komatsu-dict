@@ -152,7 +152,14 @@ class WordController extends Controller
 
     public function adminUsersIndex()
     {
-        $users = User::orderBy('created_at')->paginate(30);
+        $users = User::orderBy('created_at');
+        $search = request('user_search');
+        if ($search) {
+            $search = trim(strtolower(request('search')), ' ');
+            $users = User::where('name', 'LIKE', '%' . $search . '%')
+                ->orWhere('student_id', 'LIKE', '%' . $search . '%')->get();
+        }
+        $users->paginate(30);
         return view('admin.users', compact('users'));
     }
 

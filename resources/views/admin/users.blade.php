@@ -4,9 +4,15 @@
     <h2 class=" ml-3">
         Danh sách thành viên
     </h2>
+    <div>
+        <form class="form-inline my-2 my-lg-0" method="get" action="/admin/users">
+            <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
     <ol class="list">
         @foreach($users as $user)
-            <li class="pd-2">
+            <li class="pt-3 pb-3 pl-3">
                 <a class="pr-md-4 pr-2 " href="/admin/users/{{$user->id}}">
                     {{$user->name}}<span> - {{$user->student_id}}</span>
                 </a>

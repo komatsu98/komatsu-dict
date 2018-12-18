@@ -8,7 +8,7 @@
         {{--<ol start="{{((int)(request('page')-1)) * 15 + 1}}">--}}
         <ol start="{{($words->currentPage()-1) * 15 + 1}}" class="list">
             @foreach($words as $word)
-                <li class="pd-2">
+                <li class="pt-3 pb-3 pl-3">
                     <a href="/admin/words/{{ $word->id }}">
                         {{ $word->word }} <span><i>({{ $word->form->name }})</i></span>
                     </a>
