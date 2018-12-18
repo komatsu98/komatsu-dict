@@ -46,11 +46,12 @@
         function delete_(id) {
             var fields = $('#fields');
             var div_del = $('#field' + id);
+            var del_btn = $('#del_' + id);
             while (div_del.firstChild) {
                 div_del.removeChild(div_del.firstChild);
             }
-            fields.removeChild('#field' + id);
-            fields.removeChild('#del_' + id);
+            fields.removeChild(div_del);
+            fields.removeChild(del_btn);
         }
     </script>
 
