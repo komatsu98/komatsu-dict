@@ -41,11 +41,6 @@
     {{--<link href="/css/cus.css" rel="stylesheet">--}}
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <style>
-        .list:nth-child(2n+1) {
-            background: #bebebe;
-        }
-    </style>
 
 </head>
 

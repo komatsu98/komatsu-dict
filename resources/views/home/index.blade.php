@@ -1,10 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-    @if(isset($search))
-        <h2>{{ $search }} . . .</h2>
-    @endif
-
     @if(isset($words) && count($words))
         <p class="text-center">Search for "<span style="font-weight: bold">{{$search}}</span>"...</p>
         {{--<hr class="text-center" style="width: 50%">--}}
@@ -21,8 +17,6 @@
         <p class="text-center">Search for "<span style="font-weight: bold">{{$search}}</span>"...</p>
         <p class="ml-3"><i>nothing</i></p>
         <hr class="text-center" style="width: 50%">
-
-
     @endif
 
     {{--****************** for translations *****************--}}
