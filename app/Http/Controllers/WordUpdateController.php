@@ -36,16 +36,18 @@ class WordUpdateController extends Controller
         //create many
         if (request('vi_meaning_1') && request('en_meaning_1')) {
             for ($i = 1; $i <= request('fields_total'); $i++) {
-                WordUpdate::create([
-                    'word_id' => $word->id,
-                    'user_id' => auth()->id(),
-                    'field' => request('field_' . $i),
-                    'vi_meaning' => request('vi_meaning_' . $i),
-                    'en_meaning' => request('en_meaning_' . $i),
-                    'example' => request('example_' . $i),
-                    'example_meaning' => request('example_meaning_' . $i),
-                    'note' => request('note_' . $i)
-                ]);
+                if(request('vi_meaning' . $i) && request('en_meaning' . $i)) {
+                    WordUpdate::create([
+                        'word_id' => $word->id,
+                        'user_id' => auth()->id(),
+                        'field' => request('field_' . $i),
+                        'vi_meaning' => request('vi_meaning_' . $i),
+                        'en_meaning' => request('en_meaning_' . $i),
+                        'example' => request('example_' . $i),
+                        'example_meaning' => request('example_meaning_' . $i),
+                        'note' => request('note_' . $i)
+                    ]);
+                }
             }
 
         }
@@ -103,8 +105,11 @@ class WordUpdateController extends Controller
         {
             $vote->delete();
         }
-
+        $word = $update->word;
         $update->delete();
+        if(count($word()->updates) < 1) {
+            $word->delete();
+        }
 
         return back();
     }

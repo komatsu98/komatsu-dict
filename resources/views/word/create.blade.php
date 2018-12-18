@@ -22,12 +22,12 @@
         </div>
 
         <div>
-            <button id="showForm" class="btn btn-primary"
-                    type="button" data-toggle="collapse" data-target="#form" aria-expanded="false"
-                    aria-controls="form">
-                Add meaning...
-            </button>
-            <div class="collapse mt-2" id="form">
+            {{--<button id="showForm" class="btn btn-primary"--}}
+                    {{--type="button" data-toggle="collapse" data-target="#form" aria-expanded="false"--}}
+                    {{--aria-controls="form">--}}
+                {{--Add meaning...--}}
+            {{--</button>--}}
+            <div id="form">
                 @include('update.form')
                 <button class="btn btn-primary ml-auto" type="button" id="add_field">Add field - meaning</button>
             </div>
