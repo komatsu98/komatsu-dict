@@ -12,7 +12,7 @@
 
     <ol class="list">
         @foreach($users as $user)
-            <li class="pb-2 pl-2">
+            <li class="pt-2 pl-2">
                 <a class="pr-md-4 pr-2 " href="/admin/users/{{$user->id}}">
                     {{$user->name}}<span> - {{$user->student_id}}</span>
                 </a>

@@ -155,7 +155,7 @@ class WordController extends Controller
         $users = User::orderBy('created_at');
         $search = request('user_search');
         if ($search) {
-            $search = trim(strtolower(request('search')), ' ');
+            $search = trim(strtolower($search), ' ');
             $users = $users->where('name', 'LIKE', '%' . $search . '%')
                 ->orWhere('student_id', 'LIKE', '%' . $search . '%');
         }
