@@ -5,7 +5,8 @@
         Danh sách từ vựng
     </h2>
     @if(count($words))
-        <ol start="{{((int)(request('page')-1)) * 15 + 1}}">
+        {{--<ol start="{{((int)(request('page')-1)) * 15 + 1}}">--}}
+        <ol start="{{($words->currentPage()-1) * 15 + 1}}">
             @foreach($words as $word)
                 <li>
                     <a href="/admin/words/{{ $word->id }}">
