@@ -41,6 +41,19 @@
     <script>
         console.log("update_edit scripts");
     </script>
+
+    <script>
+        function delete_(id) {
+            var fields = $('#fields');
+            var div_del = $('#field' + id);
+            while (div_del.firstChild) {
+                div_del.removeChild(div_del.firstChild);
+            }
+            fields.removeChild('#field' + id);
+            fields.removeChild('#del_' + id);
+        }
+    </script>
+
     <script>
         var i = 1;
         $('#add_field').on("click", function () {
@@ -49,10 +62,13 @@
 
             var div0 = $('<button></button>').attr({
                 class: 'btn btn-danger',
+                id: 'del_' + i,
+                onclick: 'delete_(' + i + ')'
             }).appendTo($('#fields'));
 
             var div1 = $('<div></div>').attr({
                 class: 'form-group row',
+                id: 'field' + i
             }).appendTo($('#fields'));
 
             // var div1_1 = $('<div></div>').attr({
@@ -143,13 +159,6 @@
 
             $('#fields_total').attr({
                 value: i
-            });
-            div0.on("click", function() {
-                while (div1.firstChild) {
-                    div1.removeChild(div1.firstChild);
-                };
-                $('fields').removeChild(div1);
-                $('fields').removeChild(div0);
             })
         });
 
